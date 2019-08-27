@@ -1,0 +1,30 @@
+import React from "react";
+import classes from "./Burger.module.css";
+import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
+
+const Burger = props => {
+  //Zamiana obiekty na liste zeby móc użyc map()
+  let transformedIngredients = Object.keys(props.ingredients)
+    .map(igKey => {
+      return [...Array(props.ingredients[igKey])].map((_, i) => {
+        return <BurgerIngredient key={igKey + 1} type={igKey} />;
+      }); // Zamiana strina na liste Array(lista elementów)
+    })
+    .reduce((arr, el) => {
+      return arr.concat(el);
+    }, []);
+
+  if (transformedIngredients.length === 0) {
+    transformedIngredients = <p>Please start adding ingredients</p>;
+  }
+
+  return (
+    <div className={classes.Burger}>
+      <BurgerIngredient type='bread-top' />
+      {transformedIngredients}
+      <BurgerIngredient type='bread-bottom' />
+    </div>
+  );
+};
+
+export default Burger;
