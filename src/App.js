@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 import Layout from "./containers/Layout/Layout";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
+import Chackout from "./containers/Checkout/Checkout";
 class App extends Component {
   render() {
     return (
       <div>
         <Layout>
-          <BurgerBuilder />
+          <Route path='/checkout' component={Chackout} />
+          <Route path='/' exact component={BurgerBuilder} />
         </Layout>
       </div>
     );
