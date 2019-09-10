@@ -4,12 +4,14 @@ import { Route } from "react-router-dom";
 import Layout from "./containers/Layout/Layout";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 import Chackout from "./containers/Checkout/Checkout";
+import Orders from "./containers/Orders/Orders";
 class App extends Component {
   render() {
     return (
       <div>
         <Layout>
           <Route path='/checkout' component={Chackout} />
+          <Route path='/orders' component={Orders} />
           <Route path='/' exact component={BurgerBuilder} />
         </Layout>
       </div>
