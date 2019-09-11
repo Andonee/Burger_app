@@ -80,7 +80,7 @@ class BurgerBuilder extends Component {
       totalPrice: newPrice,
       ingredients: updatedIngredients
     });
-    this.updatePurhaseState(updatedIngredients);
+    this.updatePurchaseState(updatedIngredients);
   };
 
   purchaseHandler = () => {
