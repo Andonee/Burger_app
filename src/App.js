@@ -5,6 +5,7 @@ import Layout from "./containers/Layout/Layout";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 import Chackout from "./containers/Checkout/Checkout";
 import Orders from "./containers/Orders/Orders";
+import Auth from "./containers/Auth/Auth";
 class App extends Component {
   render() {
     return (
@@ -12,6 +13,7 @@ class App extends Component {
         <Layout>
           <Route path='/checkout' component={Chackout} />
           <Route path='/orders' component={Orders} />
+          <Route path='/auth' component={Auth} />
           <Route path='/' exact component={BurgerBuilder} />
         </Layout>
       </div>
